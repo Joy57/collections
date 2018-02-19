@@ -48,7 +48,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)✝"
+    prompt_segment black default "%(!.%{%F{yellow}%}.)☕  Joy 🇺🇸 "
   fi
 }
 
@@ -82,7 +82,7 @@ prompt_status() {
   local symbols
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}💪  root"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
